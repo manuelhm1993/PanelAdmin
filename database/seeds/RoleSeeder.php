@@ -15,30 +15,37 @@ class RoleSeeder extends Seeder
     {
         Role::create([
             [
-                'name' => 'Listar usuarios',
-                'slug' => 'users.index',//En el slug se asigna el permiso sobre la ruta
-                'description' => 'Lista y navega todos los usuarios del sistema',
+                'name' => 'Crear rol del sistema',
+                'slug' => 'roles.create',//En el slug se asigna el permiso sobre la ruta
+                'description' => 'Crear un nuevo perfil de usuario',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Ver usuario',
-                'slug' => 'users.show',
-                'description' => 'Ver el resumen detallado de cada usuario del sistema',
+                'name' => 'Listar perfils',
+                'slug' => 'roles.index',
+                'description' => 'Lista y navega todos los perfiles de usuario',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Editar usuario',
-                'slug' => 'users.edit',
-                'description' => 'Editar cualquier dato de un usuario del sistema',
+                'name' => 'Ver perfil',
+                'slug' => 'roles.show',
+                'description' => 'Ver el resumen detallado de cada perfil de usuario',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Eliminar usuario',
-                'slug' => 'users.destroy',
-                'description' => 'Eliminar cualquier usuario del sistema',
+                'name' => 'Editar perfil',
+                'slug' => 'roles.edit',
+                'description' => 'Editar cualquier dato de un perfil de usuario',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Eliminar perfil',
+                'slug' => 'roles.destroy',
+                'description' => 'Eliminar cualquier perfil de usuario',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
