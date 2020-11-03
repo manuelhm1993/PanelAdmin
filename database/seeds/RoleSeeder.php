@@ -15,14 +15,14 @@ class RoleSeeder extends Seeder
     {
         Role::create([
             [
-                'name' => 'Crear rol del sistema',
+                'name' => 'Crear perfil',
                 'slug' => 'roles.create',//En el slug se asigna el permiso sobre la ruta
                 'description' => 'Crear un nuevo perfil de usuario',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Listar perfils',
+                'name' => 'Listar perfiles',
                 'slug' => 'roles.index',
                 'description' => 'Lista y navega todos los perfiles de usuario',
                 'created_at' => now(),
