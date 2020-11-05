@@ -46,7 +46,7 @@ Route::middleware(['auth'])->group(function () {
 
     //-------------------- Rutas de controladores de recursos --------------------//
     Route::resources([
-        'roles', 'RoleController',
-        'products', 'ProductController',
+        'roles' => 'RoleController',
+        'products' => 'ProductController',
     ]);
 });
