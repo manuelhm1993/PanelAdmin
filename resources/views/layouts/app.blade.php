@@ -34,19 +34,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         {{-- Directiva blade para validar permisos --}}
-                        @can('Listar productos', Product::class)
+                        @can('Listar productos')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products.index') }}">Productos</a>
                             </li>
                         @endcan
 
-                        @can('Listar usuarios', User::class)
+                        @can('Listar usuarios')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>
                             </li>
                         @endcan
 
-                        @can('Listar perfiles', Spatie\Permission\Models\Role::class)
+                        @can('Listar perfiles')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
                             </li>

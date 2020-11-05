@@ -28,7 +28,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return 'Prueba de listado de productos';
+        $products = Product::paginate();
+
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -94,6 +96,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        return $product;
     }
 }
