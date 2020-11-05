@@ -14,11 +14,11 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('can:Listar productos')->only('index');
-        $this->middleware('can:Crear producto')->only(['create', 'store']);
-        $this->middleware('can:Ver producto')->only('show');
-        $this->middleware('can:Editar producto')->only(['edit', 'update']);
-        $this->middleware('can:Eliminar producto')->only('destroy');
+        $this->middleware('permission:Listar productos')->only('index');
+        $this->middleware('permission:Crear producto')->only(['create', 'store']);
+        $this->middleware('permission:Ver producto')->only('show');
+        $this->middleware('permission:Editar producto')->only(['edit', 'update']);
+        $this->middleware('permission:Eliminar producto')->only('destroy');
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return 'Prueba de listado de productos';
     }
 
     /**

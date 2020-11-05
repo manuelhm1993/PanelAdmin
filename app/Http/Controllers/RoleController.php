@@ -15,11 +15,11 @@ class RoleController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('can:Listar perfiles')->only('index');
-        $this->middleware('can:Crear perfil')->only(['create', 'store']);
-        $this->middleware('can:Ver perfil')->only('show');
-        $this->middleware('can:Editar perfil')->only(['edit', 'update']);
-        $this->middleware('can:Eliminar perfil')->only('destroy');
+        $this->middleware('permission:Listar perfiles')->only('index');
+        $this->middleware('permission:Crear perfil')->only(['create', 'store']);
+        $this->middleware('permission:Ver perfil')->only('show');
+        $this->middleware('permission:Editar perfil')->only(['edit', 'update']);
+        $this->middleware('permission:Eliminar perfil')->only('destroy');
     }
 
     /**
@@ -29,7 +29,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        return 'Prueba de listado de roles';
     }
 
     /**
