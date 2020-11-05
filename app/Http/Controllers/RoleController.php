@@ -15,11 +15,11 @@ class RoleController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:roles.index')->only('index');
-        $this->middleware('permission:roles.create')->only(['create', 'store']);
-        $this->middleware('permission:roles.show')->only('show');
-        $this->middleware('permission:roles.edit')->only(['edit', 'update']);
-        $this->middleware('permission:roles.destroy')->only('destroy');
+        $this->middleware('can:Listar perfiles')->only('index');
+        $this->middleware('can:Crear perfil')->only(['create', 'store']);
+        $this->middleware('can:Ver perfil')->only('show');
+        $this->middleware('can:Editar perfil')->only(['edit', 'update']);
+        $this->middleware('can:Eliminar perfil')->only('destroy');
     }
 
     /**

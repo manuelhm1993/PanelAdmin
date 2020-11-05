@@ -14,11 +14,11 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:products.index')->only('index');
-        $this->middleware('permission:products.create')->only(['create', 'store']);
-        $this->middleware('permission:products.show')->only('show');
-        $this->middleware('permission:products.edit')->only(['edit', 'update']);
-        $this->middleware('permission:products.destroy')->only('destroy');
+        $this->middleware('can:Listar productos')->only('index');
+        $this->middleware('can:Crear producto')->only(['create', 'store']);
+        $this->middleware('can:Ver producto')->only('show');
+        $this->middleware('can:Editar producto')->only(['edit', 'update']);
+        $this->middleware('can:Eliminar producto')->only('destroy');
     }
 
     /**
