@@ -20,129 +20,87 @@ class PermissionsSeeder extends Seeder
 
         //---------- Permisos para manejar usuario ----------//
         Permission::create([
-            /*'name' => 'users.index',
-            'slug' => 'Listar usuarios',
-            'description' => 'Lista y navega todos los usuarios del sistema',*/
-            'name' => 'users.index',
+            'name' => 'Listar usuarios',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'users.show',
-            'slug' => 'Ver usuario',
-            'description' => 'Ve el detalle de todos los usuarios del sistema',*/
-            'name' => 'users.show',
+            'name' => 'Ver usuario',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'users.edit',
-            'slug' => 'Editar usuario',
-            'description' => 'Edita todos los datos de los usuarios del sistema',*/
-            'name' => 'users.edit',
+            'name' => 'Editar usuario',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'users.destroy',
-            'slug' => 'Eliminar usuario',
-            'description' => 'Elimina los usuarios del sistema',*/
-            'name' => 'users.destroy',
+            'name' => 'Eliminar usuario',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         //---------- Permisos para manejar roles ----------//
         Permission::create([
-            /*'name' => 'roles.create',
-            'slug' => 'Crear perfil',
-            'description' => 'Crea un nuevo perfil de usuario del sistema',*/
-            'name' => 'roles.create',
+            'name' => 'Crear perfil',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'roles.index',
-            'slug' => 'Listar perfiles',
-            'description' => 'Lista y navega todos los perfiles de usuario del sistema',*/
-            'name' => 'roles.index',
+            'name' => 'Listar perfiles',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'roles.show',
-            'slug' => 'Ver perfil',
-            'description' => 'Ve el detalle de los perfiles de usuario del sistema',*/
-            'name' => 'roles.show',
+            'name' => 'Ver perfil',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'roles.edit',
-            'slug' => 'Editar perfil',
-            'description' => 'Edita todos los datos de los perfiles de usuario del sistema',*/
-            'name' => 'roles.edit',
+            'name' => 'Editar perfil',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'roles.destroy',
-            'slug' => 'Eliminar perfil',
-            'description' => 'Elimina los perfiles del sistema',*/
-            'name' => 'roles.destroy',
+            'name' => 'Eliminar perfil',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         //---------- Permisos para manejar productos ----------//
         Permission::create([
-            /*'name' => 'products.create',
-            'slug' => 'Crear producto',
-            'description' => 'Crea un nuevo producto del sistema',*/
-            'name' => 'products.create',
+            'name' => 'Crear producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'products.index',
-            'slug' => 'Listar productos',
-            'description' => 'Lista y navega todos los productos del sistema',*/
-            'name' => 'products.index',
+            'name' => 'Listar productos',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'products.show',
-            'slug' => 'Ver producto',
-            'description' => 'Ve el detalle de los productos del sistema',*/
-            'name' => 'products.show',
+            'name' => 'Ver producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'products.edit',
-            'slug' => 'Editar producto',
-            'description' => 'Edita todos los datos de los productos del sistema',*/
-            'name' => 'products.edit',
+            'name' => 'Editar producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            /*'name' => 'products.destroy',
-            'slug' => 'Eliminar producto',
-            'description' => 'Elimina los productos del sistema',*/
-            'name' => 'products.destroy',
+            'name' => 'Eliminar producto',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
