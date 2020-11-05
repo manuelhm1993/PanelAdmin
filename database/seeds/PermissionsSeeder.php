@@ -21,28 +21,32 @@ class PermissionsSeeder extends Seeder
 
         //---------- Permisos para manejar usuario ----------//
         Permission::create([
-            'name' => 'Listar usuarios',
+            'name' => 'users.index',
+            'slug' => 'Listar usuarios',
             'description' => 'Lista y navega todos los usuarios del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Ver usuario',
+            'name' => 'users.show',
+            'slug' => 'Ver usuario',
             'description' => 'Ve el detalle de todos los usuarios del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Editar usuario',
+            'name' => 'users.edit',
+            'slug' => 'Editar usuario',
             'description' => 'Edita todos los datos de los usuarios del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Eliminar usuario',
+            'name' => 'users.destroy',
+            'slug' => 'Eliminar usuario',
             'description' => 'Elimina los usuarios del sistema',
             'created_at' => now(),
             'updated_at' => now(),
@@ -50,35 +54,40 @@ class PermissionsSeeder extends Seeder
 
         //---------- Permisos para manejar roles ----------//
         Permission::create([
-            'name' => 'Crear perfil',
+            'name' => 'roles.create',
+            'slug' => 'Crear perfil',
             'description' => 'Crea un nuevo perfil de usuario del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Listar perfiles',
+            'name' => 'roles.index',
+            'slug' => 'Listar perfiles',
             'description' => 'Lista y navega todos los perfiles de usuario del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Ver perfil',
+            'name' => 'roles.show',
+            'slug' => 'Ver perfil',
             'description' => 'Ve el detalle de los perfiles de usuario del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Editar perfil',
+            'name' => 'roles.edit',
+            'slug' => 'Editar perfil',
             'description' => 'Edita todos los datos de los perfiles de usuario del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Eliminar perfil',
+            'name' => 'roles.destroy',
+            'slug' => 'Eliminar perfil',
             'description' => 'Elimina los perfiles del sistema',
             'created_at' => now(),
             'updated_at' => now(),
@@ -86,35 +95,40 @@ class PermissionsSeeder extends Seeder
 
         //---------- Permisos para manejar productos ----------//
         Permission::create([
-            'name' => 'Crear producto',
+            'name' => 'products.create',
+            'slug' => 'Crear producto',
             'description' => 'Crea un nuevo producto del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Listar productos',
+            'name' => 'products.index',
+            'slug' => 'Listar productos',
             'description' => 'Lista y navega todos los productos del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Ver producto',
+            'name' => 'products.show',
+            'slug' => 'Ver producto',
             'description' => 'Ve el detalle de los productos del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Editar producto',
+            'name' => 'products.edit',
+            'slug' => 'Editar producto',
             'description' => 'Edita todos los datos de los productos del sistema',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Permission::create([
-            'name' => 'Eliminar producto',
+            'name' => 'products.destroy',
+            'slug' => 'Eliminar producto',
             'description' => 'Elimina los productos del sistema',
             'created_at' => now(),
             'updated_at' => now(),
