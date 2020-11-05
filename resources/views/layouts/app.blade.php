@@ -33,7 +33,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        {{-- Directiva blade para validar permisos --}}
+                        @can('index', Product::class)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('products.index') }}">Productos</a>
+                            </li>
+                        @endcan
 
+                        @can('index', User::class)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('users.index') }}">Usuarios</a>
+                            </li>
+                        @endcan
+
+                        @can('index', Spatie\Permission\Models\Role::class)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
+                            </li>
+                        @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
