@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
+
+use App\User;
+
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -38,7 +41,12 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        //El usuario se va a editar a nivel de roles
+        //En el método all se pueden especificar las columnas deseadas
+        $roles = Role::all('id', 'name');
+        
+        //La función compact puede recibir varios parámetros
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
