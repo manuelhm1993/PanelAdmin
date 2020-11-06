@@ -17,7 +17,6 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Correo</th>
                                 <th scope="col" colspan="3">Acciones</th>
                             </tr>
                         </thead>
@@ -27,7 +26,6 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
                                     <td colspan="3">
                                         <div class="btn-group" role="group">
                                             @can('Ver usuario')
