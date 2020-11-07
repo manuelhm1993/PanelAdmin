@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -29,7 +30,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return 'Prueba de listado de roles';
+        $roles = Role::paginate();
+
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -56,45 +59,58 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Role $role)
     {
-        //
+        return view('roles.show', compact('role'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        //El Perfil se va a editar a nivel de roles
+        //En el método all se pueden especificar las columnas deseadas
+        $roles = Role::all('id', 'name', 'description');
+        
+        //La función compact puede recibir varios parámetros
+        return view('roles.edit', compact('role', 'roles'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        //
+        //El método all trae muchos valores, pero solo se toma en cuenta los filables del modelo
+        $role->update($request->all());
+
+        //Elimina los roles actuales y los sustituye por el array dado
+        $role->syncRoles($request->roles);
+
+        return redirect()->route('roles.index')->with('info', 'Perfil actualizado exitosamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
+
+        return redirect()->route('roles.index')->with('info', 'Perfil eliminado exitosamente');
     }
 }
