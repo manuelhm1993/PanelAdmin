@@ -12,7 +12,8 @@
             <li>
                 <label>
                     {!! Form::checkbox('roles[]', $rol->id, null) !!}
-                    {{ $rol->name }}
+                    
+                    {{ $rol->name }} | <em>({{ $rol->description ?: 'Sin descripción' }})</em>
                 </label>
             </li>
         @endforeach
