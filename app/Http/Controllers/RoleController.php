@@ -87,11 +87,20 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //El método all trae muchos valores, pero solo se toma en cuenta los filables del modelo
         $role->update($request->all());
 
-        //Elimina los roles actuales y los sustituye por el array dado
-        $role->syncRoles($request->roles);
+        switch($request->special) {
+            case 'all-access':
+                $role->syncPermissions(Permission::all());//Acceso total
+            break;
+
+            case 'no-access':
+                $role->syncPermissions([]);//Ningún acceso
+            break;
+
+            default:
+                $role->syncPermissions($request->permissions);//Permisos asignados
+        }
 
         return redirect()->route('roles.index')->with('info', 'Perfil actualizado exitosamente');
     }
