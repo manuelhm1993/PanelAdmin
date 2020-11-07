@@ -42,7 +42,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('roles.create');
+        $permissions = Permission::all();
+
+        return view('roles.create', compact('permissions'));
     }
 
     /**
@@ -53,7 +55,22 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = Role::create($request->all());
+
+        switch($request->special) {
+            case 'all-access':
+                $role->syncPermissions(Permission::all());//Acceso total
+            break;
+
+            case 'no-access':
+                $role->syncPermissions([]);//Ningún acceso
+            break;
+
+            default:
+                $role->syncPermissions($request->permissions);//Permisos asignados
+        }
+
+        return redirect()->route('roles.index')->with('info', 'Perfil creado exitosamente');
     }
 
     /**
@@ -75,7 +92,9 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view('roles.edit', compact('role'));
+        $permissions = Permission::all();
+
+        return view('roles.edit', compact('role', 'permissions'));
     }
 
     /**
