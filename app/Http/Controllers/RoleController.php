@@ -75,12 +75,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //El Perfil se va a editar a nivel de roles
-        //En el método all se pueden especificar las columnas deseadas
-        $roles = Role::all('id', 'name', 'description');
-        
-        //La función compact puede recibir varios parámetros
-        return view('roles.edit', compact('role', 'roles'));
+        return view('roles.edit', compact('role'));
     }
 
     /**
