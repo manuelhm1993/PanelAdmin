@@ -11,7 +11,13 @@
         @foreach ($roles as $rol)
             <li>
                 <label>
-                    {!! Form::checkbox('roles[]', $rol->id, null) !!}
+                    {{-- {!! Form::checkbox('roles[]', $rol->id, null) !!} --}}
+                    
+                    @if($user->hasRole($rol->name))
+                        <input type="radio" name="roles" value="{{ $rol->name }}" checked>
+                    @else
+                        <input type="radio" name="roles" value="{{ $rol->name }}">
+                    @endif
                     
                     {{ $rol->name }} | <em>({{ $rol->description ?: 'Sin descripción' }})</em>
                 </label>

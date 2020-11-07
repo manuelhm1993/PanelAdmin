@@ -58,7 +58,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        //El método all trae muchos valores, pero solo se toma en cuenta los filables del modelo
         $user->update($request->all());
+
+        //Elimina los roles actuales y los sustituye por el array dado
+        $user->syncRoles($request->roles);
 
         return redirect()->route('users.index')->with('info', 'Usuario actualizado exitosamente');
     }
